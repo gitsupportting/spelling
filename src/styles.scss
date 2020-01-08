@@ -1,0 +1,193 @@
+/* You can add global styles to this file, and also import other style files */
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.mainLoginInput{
+  height: 30px;
+  font-size: 17px;
+  padding: 5px 0;
+  background-color:#45454c;
+  border-color: #45454c;
+  max-width: 100%;
+//   border-radius: 17px;
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+background-color: #45454c;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+background-color: #45454c;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+background-color: #45454c;
+}
+
+.AIInput{
+    height: 30px;
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin: 0px 10px;
+    background-color:#45454c;
+    border-color: #45454c;
+    max-width: 60px;
+  //   border-radius: 17px;
+  }
+  
+  .AIInput::-webkit-input-placeholder { 
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  background-color: #45454c;
+  }
+  
+  .AIInput::-moz-placeholder  { 
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  background-color: #45454c;
+  }
+  
+  .AIInput:-ms-input-placeholder  { 
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  background-color: #45454c;
+  }
+
+.container{
+   display: block;
+   max-width: 100%;
+   min-height: 100vh;
+   background-color: #36383f;
+   color: #d9d9d9;
+   padding-top: 20px;
+   font-size: 18px;
+//    margin-left: 20px;
+//    margin-right: 20px;
+}
+.titleFont{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.commonP{
+    margin: 0.5rem 0rem;
+    padding-left: 20px;
+}
+.blackboard{
+    background-color: #333333; 
+    // background-color: #2e2e33; 
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.mainBtns{
+    margin: 5px;
+    padding: 3px 5px;
+}
+.mainSelect{
+    padding: 3px 5px;
+}
+.mainInput{
+    padding: 3px 5px;
+    height: 33px;
+    background-color: #2e2e33;
+    border-color: #70727d;
+    color: #d9d9d9;
+    width: 90%;
+}
+.filterPanel{
+    background-color: #2e2e33;
+    border-color: #2e2e33;
+    // border: solid 1px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #70727d;
+}
+.filterPanel_S{
+    background-color: #222226;
+    padding: 10px;
+    margin: 20px 0px;
+    color:white;
+    font-size: 18px;
+}
+.panelfont{
+    color: #70727d;
+    font-size: 16px;
+    margin: 5px 0px;
+}
+.panelbtn{
+    margin: 5px;
+    padding: 0px;
+    width: 80px;
+}
+.panelgroupbtn{
+    padding: 5px;
+    width: 90px;
+}
+.dropdowndark{
+    background-color: #2e2e33;
+    color: #70727d;
+    padding: 3px 20px;
+    border-radius: 4px;
+    border-color: #70727d;
+}
+.datepickerIn{
+    background-color:#2e2e33 ;
+    color: #70727d;
+    padding-left: 10px 0px 0px 0px;
+    height: 40px;
+    border-radius: 4px;
+    border-color: #70727d;
+    // max-width: 120px;
+}
+.scrollbar {
+    height: 73vh;
+    min-width: 150px;
+    background: #2e2e33 ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+// .overflow{min-height: 100vh}

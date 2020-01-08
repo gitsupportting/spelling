@@ -1,0 +1,679 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <!-- <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <br>
+  <br>
+  <br>
+  <br> -->
+  <div>
+    <div style="align-items: center; display: flex;">
+      <span class="titleFont" style="color: white;">Spelling Mistakes</span>
+      <button type="button" class="btn btn-outline-secondary mr-2" (click)='onFilterData()'
+        style="position: absolute; right: 10px;">
+        <i class="fas fa-filter"></i>Filter Data
+      </button>
+    </div>
+    <p style="margin-top: 15px;">
+      <a href="#" style="color: white;">ClientName></a>
+      <a href="#" style="color:white;"> Filter Quality></a>
+      <a href="#" style="color: #70727d;">Spelling Mistakes>...</a>
+    </p>
+    <div>
+      <div *ngIf="filterClicked" class="row">
+        <div class="col-md-9">
+          <div class="row" style="margin-top: 20px;margin-bottom: 10px;">
+            <div class="col-md-3" style="text-align: left;">
+              <p class="commonP" style="color: white;">Text</p>
+              <!-- <p class="commonP">alliencees</p> -->
+            </div>
+            <div class="col-md-3" style="text-align: left;">
+              <p class="commonP" style="color: white;">Count</p>
+              <!-- <p class="commonP">500</p> -->
+            </div>
+            <div class="col-md-6" style="text-align: left;">
+              <p class="commonP" style="margin-bottom: 0px; color: white;">What is the correct spelling of this word?</p>
+            </div>
+          </div>
+          <div class="scrollbar">
+            <div class="overflow">
+              <div class="row">
+                <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                  <p class="commonP">alliencees</p>
+                </div>
+                <div class="col-md-3" style="text-align: left;">
+                  <p class="commonP">500</p>
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                  <div class="row">
+                    <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                      <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                    </div>
+                    <div class="col-md-7" style="margin:5px 0px">
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Spelling
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Sense
+                      </button>
+                      <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                          ngbDropdownToggle>Language</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button ngbDropdownItem>English</button>
+                          <button ngbDropdownItem>Russian</button>
+                          <button ngbDropdownItem>Chinese</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="blackboard">
+                  <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                    alliencees if only I had
+                    an
+                    alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                    join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                    own
+                    I
+                    am sad without my alliencees join the alliencees you rebel scum
+                  </p>
+                  <div style="text-align: right;">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      more
+                    </button>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                  <p class="commonP">alliencees</p>
+                </div>
+                <div class="col-md-3" style="text-align: left;">
+                  <p class="commonP">500</p>
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                  <div class="row">
+                    <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                      <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                    </div>
+                    <div class="col-md-7" style="margin:5px 0px">
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Spelling
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Sense
+                      </button>
+                      <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                          ngbDropdownToggle>Language</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button ngbDropdownItem>English</button>
+                          <button ngbDropdownItem>Russian</button>
+                          <button ngbDropdownItem>Chinese</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="blackboard">
+                  <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                    alliencees if only I had
+                    an
+                    alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                    join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                    own
+                  </p>
+                  <div style="text-align: right;">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      more
+                    </button>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                  <p class="commonP">alliencees</p>
+                </div>
+                <div class="col-md-3" style="text-align: left;">
+                  <p class="commonP">500</p>
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                  <div class="row">
+                    <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                      <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                    </div>
+                    <div class="col-md-7" style="margin:5px 0px">
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Spelling
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Sense
+                      </button>
+                      <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                          ngbDropdownToggle>Language</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button ngbDropdownItem>English</button>
+                          <button ngbDropdownItem>Russian</button>
+                          <button ngbDropdownItem>Chinese</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="blackboard">
+                  <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                    alliencees if only I had
+                    an
+                    alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                    join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                    own
+                  </p>
+                  <div style="text-align: right;">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      more
+                    </button>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                  <p class="commonP">alliencees</p>
+                </div>
+                <div class="col-md-3" style="text-align: left;">
+                  <p class="commonP">500</p>
+                </div>
+                <div class="col-md-6" style="text-align: left;">
+                  <div class="row">
+                    <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                      <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                    </div>
+                    <div class="col-md-7" style="margin:5px 0px">
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Spelling
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                        Alt Sense
+                      </button>
+                      <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                          ngbDropdownToggle>Language</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button ngbDropdownItem>English</button>
+                          <button ngbDropdownItem>Russian</button>
+                          <button ngbDropdownItem>Chinese</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="blackboard">
+                  <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                    alliencees if only I had
+                    an
+                    alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                    join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                    own
+                  </p>
+                  <div style="text-align: right;">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      more
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: right;margin-top: 10px;">
+            <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onFilterPrevPage()'>
+              <i class="fas fa-chevron-circle-left"></i> Prev
+            </button>
+            <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onFilterNextPage()'>
+              Next <i class="fas fa-chevron-circle-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="filterPanel" style="min-height: 86vh;">
+            <div style="text-align: right;">
+              <i class="fas fa-times-circle fa-lg" (click)='onFilterDataClose()'></i>
+            </div>
+            <p style="margin-bottom: 10px;">Phrase Search </p>
+            <input [(ngModel)]='phraseSearch' class="mainLoginInput mr-2" type="text"
+              placeholder="&#61442; Phrase Search" />
+            <br />
+            <div class="filterPanel_S" (click)='onFilterCounts()' *ngIf="filterCounts">
+              <i class="fas fa-plus"></i>
+              Counts
+            </div>
+            <div *ngIf="!filterCounts">
+              <div class="filterPanel_S" (click)='onFilterCounts()'>
+                <i class="fas fa-plus"></i>
+                Counts
+              </div>
+              <p>
+                After x times we add the item to review.Choose all that apply
+              </p>
+              <button *ngIf="!filterCounts10" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts10()'>
+                10px
+              </button>
+              <button *ngIf="filterCounts10" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts10()'>
+                10px
+              </button>
+              <button *ngIf="!filterCounts25" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts25()'>
+                25px
+              </button>
+              <button *ngIf="filterCounts25" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts25()'>
+                25px
+              </button>
+              <button *ngIf="!filterCounts50" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts50()'>
+                50px
+              </button>
+              <button *ngIf="filterCounts50" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts50()'>
+                50px
+              </button>
+              <button *ngIf="!filterCounts100" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts100()'>
+                100px
+              </button>
+              <button *ngIf="filterCounts100" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts100()'>
+                100px
+              </button>
+              <button *ngIf="!filterCounts250" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts250()'>
+                250px
+              </button>
+              <button *ngIf="filterCounts250" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts250()'>
+                250px
+              </button>
+              <button *ngIf="!filterCounts500" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts500()'>
+                500px
+              </button>
+              <button *ngIf="filterCounts500" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts500()'>
+                500px
+              </button>
+              <button *ngIf="!filterCounts1000" type="button" class="btn btn-outline-secondary mr-2 panelbtn"
+                (click)='onFilterCounts1000()'>
+                1000px
+              </button>
+              <button *ngIf="filterCounts1000" type="button" class="btn btn-outline-primary mr-2 panelbtn"
+                (click)='onFilterCounts1000()'>
+                1000px
+              </button>
+            </div>
+            <div class="filterPanel_S" (click)='onFilterReviewedStatus()' *ngIf="filterReviewedStatus">
+              <i class="fas fa-plus"></i>
+              Reviewed Status
+            </div>
+            <div *ngIf="!filterReviewedStatus">
+              <div class="filterPanel_S" (click)='onFilterReviewedStatus()'>
+                <i class="fas fa-plus"></i>
+                Reviewed Status
+              </div>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-secondary panelgroupbtn"
+                  (click)='onFilterReviewedStatusP()'>Pending</button>
+                <button type="button" class="btn btn-outline-secondary panelgroupbtn"
+                  (click)='onFilterReviewedStatusR()'>Reviewed</button>
+                <button type="button" class="btn btn-outline-secondary panelgroupbtn"
+                  (click)='onFilterReviewedStatusB()'>Both</button>
+              </div>
+              <div style="margin:20px 0px">
+                <span class="panelfont" style="padding-right: 20px;">
+                  Reviewed By
+                </span>
+                <select class="mdb-select md-form colorful-select dropdowndark" (change)='onReviewedBy()'>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                  <option value="4">Option 4</option>
+                  <option value="5">Option 5</option>
+                </select>
+              </div>
+              <span class="panelfont">
+                Between dates of
+              </span>
+              <form class="form-inline">
+                <div class="form-group" style="margin-top: 10px;">
+                  <div class="input-group">
+                    <input class="form-control datepickerIn" placeholder="Start Date" name="dp" [(ngModel)]="startDate"
+                      ngbDatepicker #sDate="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="sDate.toggle()" type="button"><i
+                          class="fas fa-calendar-alt"></i></button>
+                    </div>
+                  </div>
+                  <span style="margin: 10px 10px;">And</span>
+                  <div class="input-group">
+                    <input class="form-control datepickerIn" placeholder="End Date" name="dp" [(ngModel)]="endDate"
+                      ngbDatepicker #eDate="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="eDate.toggle()" type="button"><i
+                          class="fas fa-calendar-alt"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- <pre>Model: {{ startDate | json }}</pre>                  -->
+            </div>
+            <div class="filterPanel_S" (click)='onFilterAI()' *ngIf="filterAI">
+              <i class="fas fa-plus"></i>
+              AI
+            </div>
+            <div *ngIf="!filterAI">
+              <div class="filterPanel_S" (click)='onFilterAI()'>
+                <i class="fas fa-plus"></i>
+                AI
+              </div>
+              <p>
+                After you have reviewed several thousand items we can train AI to predict which ones you will take
+                action
+                on.
+                You can then choose to only show items that your likely to act upon
+              </p>
+              <span>Min AI</span>
+              <input [(ngModel)]='minAI' class="AIInput mr-2" type="number" placeholder="" />
+              <span style="margin-left: 20px;">Max AI</span>
+              <input [(ngModel)]='maxAI' class="AIInput mr-2" type="number" placeholder="" />
+            </div>
+            <div class="filterPanel_S" (click)='onFilterAccounts()' *ngIf="filterAccounts">
+              <i class="fas fa-plus"></i>
+              Accounts
+            </div>
+            <div *ngIf="!filterAccounts">
+              <div class="filterPanel_S" (click)='onFilterAccounts()'>
+                <i class="fas fa-plus"></i>
+                Accounts
+              </div>
+              <p>
+                If you have a sandbox or multi-accounts you can work on multiple items here.
+              </p>
+              <select class="mdb-select md-form colorful-select dropdowndark" (change)='onAccounts()'>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+              </select>
+            </div>
+            <div class="filterPanel_S" (click)='onFilterCreated()' *ngIf="filterCreated">
+              <i class="fas fa-plus"></i>
+              Created
+            </div>
+            <div *ngIf="!filterCreated" style="margin-bottom: 20px;">
+              <div class="filterPanel_S" (click)='onFilterCreated()'>
+                <i class="fas fa-plus"></i>
+                Created
+              </div>
+              <span class="panelfont">
+                Between dates of
+              </span>
+              <form class="form-inline">
+                <div class="form-group" style="margin-top: 10px;">
+                  <div class="input-group">
+                    <input class="form-control datepickerIn" placeholder="Start Date" name="dp"
+                      [(ngModel)]="createStartDate" ngbDatepicker #CSDate="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="CSDate.toggle()" type="button"><i
+                          class="fas fa-calendar-alt"></i></button>
+                    </div>
+                  </div>
+                  <span style="margin: 10px 10px;">And</span>
+                  <div class="input-group">
+                    <input class="form-control datepickerIn" placeholder="End Date" name="dp"
+                      [(ngModel)]="createEndDate" ngbDatepicker #CEDate="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="CEDate.toggle()" type="button"><i
+                          class="fas fa-calendar-alt"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div style="text-align: right;">
+              <button type="button" class="btn btn-outline-secondary mr-2" (click)='onFilterCancel()'>
+                Cancel
+              </button>
+              <button type="button" class="btn btn-outline-secondary mr-2" (click)='onFilterApply()'>
+                Apply Filter to Current
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!filterClicked">
+        <div class="row" style="margin-top: 20px;margin-bottom: 10px;">
+          <div class="col-md-3" style="text-align: left;">
+            <p class="commonP" style="color: white;">Text</p>
+            <!-- <p class="commonP">alliencees</p> -->
+          </div>
+          <div class="col-md-3" style="text-align: left;">
+            <p class="commonP" style="color: white;">Count</p>
+            <!-- <p class="commonP">500</p> -->
+          </div>
+          <div class="col-md-6" style="text-align: left;">
+            <p class="commonP" style="margin-bottom: 0px; color: white;">What is the correct spelling of this word?</p>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="overflow">
+            <div class="row">
+              <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                <p class="commonP">alliencees</p>
+              </div>
+              <div class="col-md-3" style="text-align: left;">
+                <p class="commonP">500</p>
+              </div>
+              <div class="col-md-6" style="text-align: left;">
+                <div class="row">
+                  <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                    <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                  </div>
+                  <div class="col-md-7" style="margin:5px 0px">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Spelling
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Sense
+                    </button>
+                    <div ngbDropdown class="d-inline-block">
+                      <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                        ngbDropdownToggle>Language</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>English</button>
+                        <button ngbDropdownItem>Russian</button>
+                        <button ngbDropdownItem>Chinese</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blackboard">
+                <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                  alliencees if only I had
+                  an
+                  alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                  join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                  own
+                  I
+                  am sad without my alliencees join the alliencees you rebel scum
+                </p>
+                <div style="text-align: right;">
+                  <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                    more
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                <p class="commonP">alliencees</p>
+              </div>
+              <div class="col-md-3" style="text-align: left;">
+                <p class="commonP">500</p>
+              </div>
+              <div class="col-md-6" style="text-align: left;">
+                <div class="row">
+                  <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                    <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                  </div>
+                  <div class="col-md-7" style="margin:5px 0px">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Spelling
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Sense
+                    </button>
+                    <div ngbDropdown class="d-inline-block">
+                      <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                        ngbDropdownToggle>Language</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>English</button>
+                        <button ngbDropdownItem>Russian</button>
+                        <button ngbDropdownItem>Chinese</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blackboard">
+                <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                  alliencees if only I had
+                  an
+                  alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                  join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                  own
+                </p>
+                <div style="text-align: right;">
+                  <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                    more
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                <p class="commonP">alliencees</p>
+              </div>
+              <div class="col-md-3" style="text-align: left;">
+                <p class="commonP">500</p>
+              </div>
+              <div class="col-md-6" style="text-align: left;">
+                <div class="row">
+                  <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                    <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                  </div>
+                  <div class="col-md-7" style="margin:5px 0px">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Spelling
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Sense
+                    </button>
+                    <div ngbDropdown class="d-inline-block">
+                      <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                        ngbDropdownToggle>Language</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>English</button>
+                        <button ngbDropdownItem>Russian</button>
+                        <button ngbDropdownItem>Chinese</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blackboard">
+                <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                  alliencees if only I had
+                  an
+                  alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                  join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                  own
+                </p>
+                <div style="text-align: right;">
+                  <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                    more
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3" style="text-align: left;display: flex;align-items: center;">
+                <p class="commonP">alliencees</p>
+              </div>
+              <div class="col-md-3" style="text-align: left;">
+                <p class="commonP">500</p>
+              </div>
+              <div class="col-md-6" style="text-align: left;">
+                <div class="row">
+                  <div class="col-md-5" style="margin:5px 0px;display:flex; align-items:center">
+                    <input mdbInput type="text" class="form-control mainInput" placeholder="" style="margin-left: 5px;">
+                  </div>
+                  <div class="col-md-7" style="margin:5px 0px">
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Spelling
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                      Alt Sense
+                    </button>
+                    <div ngbDropdown class="d-inline-block">
+                      <button class="btn btn-outline-secondary mainSelect" id="dropdownBasic1"
+                        ngbDropdownToggle>Language</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>English</button>
+                        <button ngbDropdownItem>Russian</button>
+                        <button ngbDropdownItem>Chinese</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blackboard">
+                <p class="commonP" style="padding-left: 0px;">join all my alliencees my alliencees is bestest give me my
+                  alliencees if only I had
+                  an
+                  alliecees of my own I am sad without my alliencees join the alliencees you rebel scum.
+                  join all my alliencees my alliencees is bestest give me my alliencees if only I had an alliecees of my
+                  own
+                </p>
+                <div style="text-align: right;">
+                  <button type="button" class="btn btn-outline-secondary mr-2 mainBtns">
+                    more
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: right;margin-top: 20px;">
+          <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onFilterPrevPage()'>
+            <i class="fas fa-chevron-circle-left"></i> Prev
+          </button>
+          <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onFilterNextPage()'>
+            Next <i class="fas fa-chevron-circle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
