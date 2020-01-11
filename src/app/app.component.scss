@@ -1,0 +1,308 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.container{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #0c0c0c;
+    color: #f4f4f4;
+    padding-top: 20px;
+    font-size: 18px; 
+    padding: 20px 6vw;
+    font-family: 'glyph';
+ }
+ .fontS{
+    margin: 0.5rem 0rem;
+    color:#f4f4f4;
+    font-size: 14px;
+ }
+ .fontwrongSpelling{
+    font-size: 20px;
+    margin: 0.5rem 0rem;
+ }
+ .fontGray{
+     color: #70727d;
+ }
+ .fontBright{
+    color: #f4f4f4;
+}
+ .fontText{
+    font-size: 16px;
+    margin: 0.5rem 0rem;
+}
+ .mainBtns{
+    margin: 5px;
+    padding: 3px 10px;
+    font-size: 15px;
+    background-color: #2e2e33;
+    border: none;
+}
+.mainInput{
+    background-color: #2e2e33;
+    color: #f4f4f4;
+    padding: 0px 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    border-color: #70727d;
+    height: 28px;
+    max-width: 200px;
+}
+.PremainInput{
+    background-color: #222226;
+    color: #f4f4f4;
+    padding: 0px 10px;
+    margin: 0px 5px;
+    font-size: 15px;
+    border-color: #70727d;
+    height: 28px;
+    width: 10vw;
+}
+.premainBtns{
+    background-color: #2e2e33;
+    color: #70727d;
+    padding: 0px 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    height: 28px;
+    max-width: 200px;
+}
+.btmMorePos{
+    text-align: right; 
+    margin-right: 20px;
+    position: absolute; 
+    bottom: 10px;
+    right: 0px;
+}
+.dropdowndark{
+    background-color: #2e2e33;
+    color: #70727d;
+    margin: 5px;
+    padding: 3px 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    border: none;
+}
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #414d55 -moz-use-text-color #414d55;
+    border-style: solid none;
+    border-width: 1px 0;
+    color: #414d55;
+    margin: 0.5rem 0rem;
+}
+.scrollbar {
+    height: 68vh;
+    min-width: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // overflow-y: hidden;
+    padding: 20px 10px;
+    margin: 15px 0px;
+}                                                   
+.overflow{
+    // min-height: 100vh;
+    margin: 0px;
+}
+.Modalcontainer{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background-color: #1b1f20;
+    color: #f4f4f4;
+    font-size: 15px;    
+    font-family: 'glyph'; 
+ }
+ .filterPanel_S{
+    padding: 10px;
+    margin: 0px 0px;
+    color:#f4f4f4;
+    font-size: 16px;
+}
+.panelfont{
+    color: #c7c8c8;
+    font-size: 15px;
+    margin: 5px 0px;
+}
+.panelbtn{
+    margin: 5px;
+    padding: 0px;
+    width: 80px;
+    border: none; 
+    color: #f4f4f4;
+    background-color: #212626;
+    font-size: 15px;
+}
+.panelbtnSelect{
+    margin: 5px;
+    padding: 0px;
+    width: 80px;
+    color: black;
+    border: none; 
+    background-color: #58c1b8;
+    font-size: 15px;
+}
+.panelgroupbtn{
+    padding: 5px;
+    font-size: 15px;
+    width: 110px;    
+    border: none; 
+    color: #f4f4f4;
+    background-color: #212626;
+}
+.panelgroupbtnSelect{
+    padding: 5px;
+    font-size: 15px;    
+    width: 110px;
+    color: black;
+    border: none; 
+    background-color: #58c1b8;
+}
+.panelDropdowndark{
+    background-color: #2e2e33;
+    color: #70727d;
+    margin: 5px;
+    padding: 3px 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    border: none;
+}
+.datepickerIn{
+    background-color:#2e2e33 ;
+    color: #70727d;
+    padding-left: 10px 0px 0px 0px;
+    height: 30px;
+    max-width: 120px;
+    border-radius: 4px;
+    border-color: #70727d;
+    font-size: 15px;
+}
+input[type=checkbox] + label {
+    color: #ccc;
+} 
+input[type=checkbox]:checked + label {
+    color: #58c1b8;
+    font-style: normal;
+} 
+.mainLoginInput{
+    height: 30px;
+    font-size: 15px;
+    padding: 5px 0;
+    background-color:#45454c;
+    border-color: #45454c;
+    max-width: 100%;
+}
+  
+.mainLoginInput::-webkit-input-placeholder { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: #45454c;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: #45454c;
+}
+  
+.mainLoginInput:-ms-input-placeholder  { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: #45454c;              
+}
+
+input:focus, textarea:focus, select:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+.AIInput{
+    height: 30px;
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin: 0px 10px;
+    background-color:#45454c;
+    border-color: #45454c;
+    max-width: 60px;
+}
+
+.AIInput::-webkit-input-placeholder { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: #45454c;
+}
+
+.AIInput::-moz-placeholder  { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: #45454c;
+}
+
+.AIInput:-ms-input-placeholder  { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: #45454c;
+}
+
+
+@media (max-width: 479px) {
+    .PremainInput{
+        background-color: black;
+        color: #f4f4f4;
+        padding: 0px 10px;
+        margin: 0px 5px;
+        font-size: 15px;
+        border-color: #70727d;
+        height: 28px;
+        width: 60vw;
+    }
+    .mainBtns{
+        margin: 5px;
+        padding: 3px 5px;
+        font-size: 15px;
+        background-color: #2e2e33;
+        border: none;
+    }
+    .btmMorePos{
+        text-align: right; 
+        margin-right: 20px;
+        position: relative;
+    }
+}
