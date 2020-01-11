@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
+import { SpellMistakesComponent } from './spell-mistakes/spell-mistakes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpellMistakesComponent
   ],
   imports: [
     BrowserModule,
