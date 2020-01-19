@@ -19,248 +19,94 @@
 
       <!-- Main Screen Part1 -->
 
+      <div *ngFor="let iterate of iterates; let i = index">
+        <!-- Hearder of main screen part1 -->
+        <div class="row" style="display: flex; align-items: center;" style="background-color: #36383f;">
+          <div class="row col-md-6" style="margin-top: 15px;">
+            <div class="col-md-4" style="margin-bottom:10px;">
+              <span class="fontwrongSpelling">{{correctSpelling[i]}}</span>
+              <span style="font-size: 15px; padding-left: 20px;"> <i class="fas fa-times"></i>
+                {{numcorrectSpelling[i]}}</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row" style="display: flex; align-items: center;">
+              <div class="col-md-6">
+                <div class="form-row" style="display: flex; align-items: center; padding-left: 10px;">
+                  <label class="col-md-6 col-form-label fontS" for="correctSpelling[i]">What is Correct
+                    Spelling?</label>
+                  <input type="text" class="form-control col-md-6 mainInput" name="correctSpelling[i]"
+                    [(ngModel)]="correctSpelling[i]" placeholder="Enter Correct Spelling"
+                    (ngModelChange)='oncorrectspelling(i)' />
+                </div>
+              </div>
+              <div class="col-md-6" style="margin:10px 0px">
+                <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onAltSpelling(i)'>
+                  Alt Spelling
+                </button>
+                <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onAltSense(i)'>
+                  Alt Sense
+                </button>
+                <select class="mdb-select md-form colorful-select dropdowndark" (change)='languageSelect(i)'
+                  [(ngModel)]="selectedLan[i]">
+                  <option value="1">Arabic</option>
+                  <option value="2">Catalan</option>
+                  <option value="3">Chinese</option>
+                  <option value="4">Czech</option>
+                  <option value="5">English</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Hearder of main screen part1 -->
-      <div class="row" style="display: flex; align-items: center;" style="background-color: #36383f;">
-        <div class="row col-md-6" style="margin-top: 15px;">
-          <div class="col-md-4" style="margin-bottom:10px;">
-            <span class="fontwrongSpelling">{{correctSpelling1}}</span>
-            <span style="font-size: 15px; padding-left: 20px;"> <i class="fas fa-times"></i>
-              {{numcorrectSpelling1}}</span>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row" style="display: flex; align-items: center;">
-            <div class="col-md-6">
-              <div class="form-row" style="display: flex; align-items: center; padding-left: 10px;">
-                <label class="col-md-6 col-form-label fontS" for="correctSpelling">What is Correct Spelling?</label>
-                <input type="text" class="form-control col-md-6 mainInput" name="correctSpelling" id="correctSpelling"
-                  [(ngModel)]="correctSpelling1" placeholder="Enter Correct Spelling"
-                  (ngModelChange)='oncorrectspelling1()' />
-              </div>
+        <!-- Content of main screen part1 -->
+        <div class="row" style="background-color: #222226;">
+          <div class="fontGray col-md-6" style="border-right: 1px solid; border-color:#36383f">
+            <p class="fontS">Examples</p>
+            <div *ngFor="let oneExample of example[i]; let j = index">
+              <div [innerHTML]="example[i][j]"></div>
             </div>
-            <div class="col-md-6" style="margin:10px 0px">
-              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onAltSpelling()'>
-                Alt Spelling
-              </button>
-              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onAltSense()'>
-                Alt Sense
-              </button>
-              <select class="mdb-select md-form colorful-select dropdowndark" (change)='languageSelect1()'
-                [(ngModel)]="selectedLan1">
-                <option value="1">Arabic</option>
-                <option value="2">Catalan</option>
-                <option value="3">Chinese</option>
-                <option value="4">Czech</option>
-                <option value="5">English</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Content of main screen part1 -->
-      <div class="row" style="background-color: #222226;">
-        <div class="fontGray col-md-6" style="border-right: 1px solid; border-color:#36383f">
-          <p class="fontS">Examples</p>
-          <div>
-            <div [innerHTML]="example1[0]"></div>
-            <div [innerHTML]="example1[1]"></div>
-            <div [innerHTML]="example1[2]"></div>
-          </div>
-          <div style="text-align: right; margin-right: 20px; margin-bottom: 20px;">
-            <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onloadmore()'>
-              More
-            </button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <p class="fontS">Alternatives</p>
-          <div style="display: flex; align-items: center; justify-content: center; height: 80%;"
-            *ngIf='isNonAlternative'>
-            <div class="fontGray" style="display: block; text-align: center;">
-              <i class="fas fa-exclamation-circle"></i>
-              <p>You have not added any alterantives</p>
-            </div>
-          </div>
-          <div class="col-md-6 form-row" style="display: flex; padding-left: 15px; width: 100%;"
-            *ngIf="isAltSpelling&&!isNonAlternative">
-            <input type="text" class="form-control PremainInput" [(ngModel)]="preCorrectSpelling"
-              (ngModelChange)='onPrecorrectspelling()' />
-            <button type="button" class="btn btn-outline-secondary premainBtns" (click)='closeAltSpelling()'>
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div style="padding-left: 15px; width: 100%;" *ngIf="isAltSense&&!isNonAlternative">
-            <div class="form-row" style="display: flex;">
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <div class="btmMorePos">
-              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onloadmore()'>
+            <div style="text-align: right; margin-right: 20px; margin-bottom: 20px;">
+              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onloadmoreText(i)'>
                 More
               </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Main Screen Part2 -->
-
-      <!-- Hearder of Main Screen Part2 -->
-
-      <div class="row" style="display: flex; align-items: center;" style="background-color: #36383f;">
-        <div class="row col-md-6" style="margin-top: 15px;">
-          <div class="col-md-4" style="margin-bottom:10px;">
-            <span class="fontwrongSpelling">{{correctSpelling2}}</span>
-            <span style="font-size: 15px; padding-left: 20px;"> <i class="fas fa-times"></i>
-              {{numcorrectSpelling2}}</span>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row" style="display: flex; align-items: center;">
-            <div class="col-md-6">
-              <div class="form-row" style="display: flex; align-items: center; padding-left: 10px;">
-                <label class="col-md-6 col-form-label fontS" for="correctSpelling">What is Correct Spelling?</label>
-                <input type="text" class="form-control col-md-6 mainInput" name="correctSpelling" id="correctSpelling"
-                  [(ngModel)]="correctSpelling2" placeholder="Enter Correct Spelling"
-                  (ngModelChange)='oncorrectspelling2()' />
+          <div class="col-md-6">
+            <p class="fontS">Alternatives</p>
+            <div style="display: flex; align-items: center; justify-content: center; height: 80%;"
+              *ngIf='isNonAlternative[i]'>
+              <div class="fontGray" style="display: block; text-align: center;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>You have not added any alterantives</p>
               </div>
             </div>
-            <div class="col-md-6" style="margin:10px 0px">
-              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onAltSpelling2()'>
-                Alt Spelling
-              </button>
-              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onAltSense2()'>
-                Alt Sense
-              </button>
-              <select class="mdb-select md-form colorful-select dropdowndark" (change)='languageSelect2()'
-                [(ngModel)]="selectedLan2">
-                <option value="1">Arabic</option>
-                <option value="2">Catalan</option>
-                <option value="3">Chinese</option>
-                <option value="4">Czech</option>
-                <option value="5">English</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Content of Main Screen Part2 -->
-
-      <div class="row" style="background-color: #222226;">
-        <div class="fontGray col-md-6" style="border-right: 1px solid; border-color:#36383f">
-          <p class="fontS">Examples</p>
-          <div>
-            <div [innerHTML]="example2[0]"></div>
-            <div [innerHTML]="example2[1]"></div>
-            <div [innerHTML]="example2[2]"></div>
-          </div>
-          <div style="text-align: right; margin-right: 20px; margin-bottom: 20px;">
-            <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onloadmore()'>
-              More
-            </button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <p class="fontS">Alternatives</p>
-          <div style="display: flex; align-items: center; justify-content: center; height: 80%;"
-            *ngIf='isNonAlternative2'>
-            <div class="fontGray" style="display: block; text-align: center;">
-              <i class="fas fa-exclamation-circle"></i>
-              <p>You have not added any alterantives</p>
-            </div>
-          </div>
-          <div class="col-md-6 form-row" style="display: flex; padding-left: 15px; width: 100%;"
-            *ngIf="isAltSpelling2&&!isNonAlternative2">
-            <input type="text" class="form-control PremainInput" [(ngModel)]="preCorrectSpelling2"
-              (ngModelChange)='onPrecorrectspelling2()' />
-            <button type="button" class="btn btn-outline-secondary premainBtns" (click)='closeAltSpelling2()'>
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div style="padding-left: 15px; width: 100%;" *ngIf="isAltSense2&&!isNonAlternative2">
-            <div class="form-row" style="display: flex;">
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div style="display: flex; margin: 10px 0px;">
-                <input type="text" class="form-control PremainInput" (ngModelChange)='onPrecorrectspelling()' />
-                <button type="button" class="btn btn-outline-secondary premainBtns">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <div class="btmMorePos">
-              <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onloadmore()'>
-                More
+            <div class="col-md-6 form-row" style="display: flex; padding-left: 15px; width: 100%;"
+              *ngIf="isAltSpelling[i]&&!isNonAlternative[i]">
+              <input type="text" class="form-control PremainInput" [(ngModel)]="preCorrectSpelling"
+                (ngModelChange)='onPrecorrectspelling()' />
+              <button type="button" class="btn btn-outline-secondary premainBtns" (click)='closeAltSpelling(i)'>
+                <i class="fas fa-times"></i>
               </button>
             </div>
+            <div style="padding-left: 15px; width: 100%;" *ngIf="isAltSense[i]&&!isNonAlternative[i]">
+              <div *ngFor="let altSenseNum of altSenseNums[i]">
+                <app-inbox-with-times [inboxData]="altSenseNum" (removeInbox)="removeIndox($event, i)">
+                </app-inbox-with-times>
+              </div>
+              <div class="btmMorePos">
+                <button type="button" class="btn btn-outline-secondary mr-2 mainBtns" (click)='onloadmore(i)'>
+                  More
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Main Screen Part2 -->
       </div>
+
     </div>
   </div>
 </div>

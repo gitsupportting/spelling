@@ -1,29 +1,75 @@
+
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { ApiService } from '../_services/api.service';
 @Component({
-  selector: 'app-spell-mistakes',
-  templateUrl: './spell-mistakes.component.html',
-  styleUrls: ['./spell-mistakes.component.scss'],
+  selector: 'app-spell-mistake',
+  templateUrl: './spell-mistake.component.html',
+  styleUrls: ['./spell-mistake.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SpellMistakesComponent implements OnInit {
-  ngOnInit() {
+export class SpellMistakeComponent implements OnInit {
 
-  }
   title = 'fixspelling';
 
   startDate: NgbDate;
   endDate: NgbDate;
   createStartDate: NgbDate;
   createEndDate: NgbDate;
+  iterates: any;
+  altSenseNums: any;
+  example: any;
 
-  constructor(private modalService: NgbModal, calendar: NgbCalendar) {
+  constructor(
+    private modalService: NgbModal,
+    calendar: NgbCalendar,
+    private apiService: ApiService
+  ) {
     this.startDate = calendar.getToday();
     this.endDate = calendar.getNext(calendar.getToday(), 'd', 10);
     this.createStartDate = calendar.getToday();
     this.createEndDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
 
+  ngOnInit() {
+    // this.apiService.deleteInbox();
+    this.iterates = [1, 2];
+    // this.altSenseNums=[1,2,3,4,5,6];
+    this.altSenseNums = [
+      [
+        { id: 1, text: "text1" },
+        { id: 2, text: "text2" },
+        { id: 3, text: "main3" },
+        { id: 4, text: "text4" },
+        { id: 5, text: "text5" },
+        { id: 6, text: "text6" },
+        { id: 7, text: "main7" },
+        { id: 8, text: "text8" }
+      ],
+      [
+        { id: 1, text: "text1" },
+        { id: 2, text: "text2" },
+        { id: 3, text: "main3" },
+        { id: 4, text: "text4" },
+        { id: 5, text: "text5" },
+        { id: 6, text: "text6" },
+        { id: 7, text: "main7" },
+        { id: 8, text: "text8" }
+      ],
+    ],
+      this.example = [
+        [
+          'Join my alliencees my alliencees is best give me alliencees if only I had alliencees of my own',
+          'Scholars are divided as the impact of alliencees. Serveral studies find that defensive alliencees deter',
+          'I am sad without my alliencees. Join the alliencees you rebel scum',
+        ],
+        [
+          'I really love scrambled eggs. They are the Shiiit',
+          'Shiiit shitty bruv, you got wrecked so bad',
+          'You piece of Shiiit',
+        ]
+      ];
+  }
   // Sidebar Modal modalService
 
   closeResult: string;
@@ -48,61 +94,40 @@ export class SpellMistakesComponent implements OnInit {
 
   // Example Text Disply in Main Screen 
 
-  example1: string[] = [
-    'Join my alliencees my alliencees is best give me alliencees if only I had alliencees of my own',
-    'Scholars are divided as the impact of alliencees. Serveral studies find that defensive alliencees deter',
-    'I am sad without my alliencees. Join the alliencees you rebel scum',
-  ];
-  example2: string[] = [
-    'I really love scrambled eggs. They are the Shiiit',
-    'Shiiit shitty bruv, you got wrecked so bad',
-    'You piece of Shiiit',
-  ]
 
-  correctSpelling1: string = '';
-  numcorrectSpelling1: number = 0;
+
+
+  correctSpelling: string[] = ['', ''];
+  numcorrectSpelling: number[] = [0, 0];
   find = 'abc';
   re = new RegExp(this.find, 'g');
 
 
-  oncorrectspelling1() {
-    this.example1 = [
-      'Join my alliencees my alliencees is best give me alliencees if only I had alliencees of my own',
-      'Scholars are divided as the impact of alliencees. Serveral studies find that defensive alliencees deter',
-      'I am sad without my alliencees. Join the alliencees you rebel scum',
+  oncorrectspelling(iterate) {
+    this.example = [
+      [
+        'Join my alliencees my alliencees is best give me alliencees if only I had alliencees of my own',
+        'Scholars are divided as the impact of alliencees. Serveral studies find that defensive alliencees deter',
+        'I am sad without my alliencees. Join the alliencees you rebel scum',
+      ],
+      [
+        'I really love scrambled eggs. They are the Shiiit',
+        'Shiiit shitty bruv, you got wrecked so bad',
+        'You piece of Shiiit',
+      ]
     ];
-    this.numcorrectSpelling1 = 0;
-    this.find = this.correctSpelling1;
+    this.numcorrectSpelling[iterate] = 0;
+    this.find = this.correctSpelling[iterate];
     this.re = new RegExp(this.find, 'g');
-    if (this.correctSpelling1 !== '') {
-      for (let i = 0; i < (this.example1).length; i++) {
-        this.numcorrectSpelling1 = this.numcorrectSpelling1 + (this.example1[i]).split(this.correctSpelling1).length;
-        this.example1[i] = this.example1[i].replace(this.re, '<span class="fontBright">' + this.correctSpelling1 + '</span>');
+    if (this.correctSpelling[iterate] !== '') {
+      for (let i = 0; i < (this.example[iterate]).length; i++) {
+        this.numcorrectSpelling[iterate] = this.numcorrectSpelling[iterate] + (this.example[iterate][i]).split(this.correctSpelling[iterate]).length;
+        this.example[iterate][i] = this.example[iterate][i].replace(this.re, '<span class="fontBright">' + this.correctSpelling[iterate] + '</span>');
       }
-      this.numcorrectSpelling1 = this.numcorrectSpelling1 - this.example1.length;
+      this.numcorrectSpelling[iterate] = this.numcorrectSpelling[iterate] - this.example[iterate].length;
     }
   }
 
-  correctSpelling2: string = '';
-  numcorrectSpelling2: number = 0;
-
-  oncorrectspelling2() {
-    this.example2 = [
-      'I really love scrambled eggs. They are the Shiiit',
-      'Shiiit shitty bruv, you got wrecked so bad',
-      'You piece of Shiiit',
-    ];
-    this.numcorrectSpelling2 = 0;
-    this.find = this.correctSpelling2;
-    this.re = new RegExp(this.find, 'g');
-    if (this.correctSpelling2 !== '') {
-      for (let i = 0; i < (this.example2).length; i++) {
-        this.numcorrectSpelling2 = this.numcorrectSpelling2 + (this.example2[i]).split(this.correctSpelling2).length;
-        this.example2[i] = this.example2[i].replace(this.re, '<span class="fontBright">' + this.correctSpelling2 + '</span>');
-      }
-      this.numcorrectSpelling2 = this.numcorrectSpelling2 - this.example2.length;
-    }
-  }
   // Alt Spelling Input Change
 
   preCorrectSpelling: string = '';
@@ -111,72 +136,50 @@ export class SpellMistakesComponent implements OnInit {
   }
 
   // Language Select parts
+  selectedLan: string[] = ['5', '5'];
+  languageSelect(iterate) {
+    console.log(this.selectedLan[iterate]);
+  }
 
-  selectedLan1: string = '5';
-  languageSelect1() {
-    console.log(this.selectedLan1);
-  }
-  selectedLan2: string = '5';
-  languageSelect2() {
-    console.log(this.selectedLan2);
-  }
 
   // Conditional display in Filter parts 
 
-  isNonAlternative: boolean = true;
-  isAltSpelling: boolean = false;
-  onAltSpelling() {
-    this.isAltSpelling = !(this.isAltSpelling);
-    if (this.isAltSpelling) {
-      this.isAltSense = false;
-      this.isNonAlternative = false;
+  isNonAlternative: boolean[] = [true, true];
+  isAltSpelling: boolean[] = [false, false];
+
+  onAltSpelling(iterate) {
+    this.isAltSpelling[iterate] = !(this.isAltSpelling[iterate]);
+
+    if (this.isAltSpelling[iterate]) {
+      this.isAltSense[iterate] = false;
+      this.isNonAlternative[iterate] = false;
     }
-    if (!this.isAltSpelling && !this.isAltSense) {
-      this.isNonAlternative = true;
+    if (!this.isAltSpelling[iterate] && !this.isAltSense) {
+      this.isNonAlternative[iterate] = true;
     }
   }
-  closeAltSpelling() {
-    this.isNonAlternative = true;
-  }
-  isAltSense: boolean = false;
-  onAltSense() {
-    this.isAltSense = !(this.isAltSense);
-    if (this.isAltSense) {
-      this.isAltSpelling = false;
-      this.isNonAlternative = false;
-    }
-    if (!this.isAltSpelling && !this.isAltSense) {
-      this.isNonAlternative = true;
-    }
+  closeAltSpelling(iterate) {
+    this.isNonAlternative[iterate] = true;
   }
 
-  isNonAlternative2: boolean = true;
-  isAltSpelling2: boolean = false;
-  onAltSpelling2() {
-    this.isAltSpelling2 = !(this.isAltSpelling2);
-    if (this.isAltSpelling2) {
-      this.isAltSense2 = false;
-      this.isNonAlternative2 = false;
-    }
-    if (!this.isAltSpelling2 && !this.isAltSense2) {
-      this.isNonAlternative2 = true;
-    }
-  }
-  closeAltSpelling2() {
-    this.isNonAlternative2 = true;
-  }
-  isAltSense2: boolean = false;
-  onAltSense2() {
-    this.isAltSense2 = !(this.isAltSense2);
-    if (this.isAltSense2) {
-      this.isAltSpelling2 = false;
-      this.isNonAlternative2 = false;
-    }
-    if (!this.isAltSpelling2 && !this.isAltSense2) {
-      this.isNonAlternative2 = true;
-    }
-  }
+  isAltSense: boolean[] = [false, false];
 
+  onAltSense(iterate) {
+    this.isAltSense[iterate] = !(this.isAltSense[iterate]);
+    if (this.isAltSense[iterate]) {
+      this.isAltSpelling[iterate] = false;
+      this.isNonAlternative[iterate] = false;
+    }
+    if (!this.isAltSpelling[iterate] && !this.isAltSense[iterate]) {
+      this.isNonAlternative[iterate] = true;
+    }
+  }
+  onloadmore(iterate) {
+    console.log(iterate);
+  }
+  onloadmoreText(iterate) {
+    console.log(iterate);
+  }
   // Main Screen Footer 
 
   onFilterPrevPage() {
@@ -433,8 +436,6 @@ export class SpellMistakesComponent implements OnInit {
     this.filterReviewedStatusP = false;
     this.filterReviewedStatusR = false;
     this.filterReviewedStatusB = false;
-    this.startDate = calendar.getToday();
-    this.endDate = calendar.getNext(calendar.getToday(), 'd', 10);
     this.startDate = null;
     this.endDate = null;
     this.Reviewedby = '1';
@@ -444,9 +445,12 @@ export class SpellMistakesComponent implements OnInit {
     this.selectedAccounts = '1';
 
     this.filterCreated = true;
-    this.createEndDate = calendar.getToday();
-    this.createStartDate = calendar.getNext(calendar.getToday(), 'd', 10);
     this.createEndDate = null;
     this.createStartDate = null;
+  }
+
+  removeIndox(ev, i) {
+    console.log('this is tran data: ', ev, this.altSenseNums[i]);
+    this.altSenseNums[i] = this.altSenseNums[i].filter(item => item !== ev);
   }
 }

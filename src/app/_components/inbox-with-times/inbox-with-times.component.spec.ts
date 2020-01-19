@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpellMistakesComponent } from './spell-mistakes.component';
+import { InboxWithTimesComponent } from './inbox-with-times.component';
 
-describe('SpellMistakesComponent', () => {
-  let component: SpellMistakesComponent;
-  let fixture: ComponentFixture<SpellMistakesComponent>;
+describe('InboxWithTimesComponent', () => {
+  let component: InboxWithTimesComponent;
+  let fixture: ComponentFixture<InboxWithTimesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpellMistakesComponent ]
+      declarations: [ InboxWithTimesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpellMistakesComponent);
+    fixture = TestBed.createComponent(InboxWithTimesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
