@@ -55,14 +55,14 @@ export class SpellMistakeComponent implements OnInit {
     ],
       this.example = [
         [
-          'Join my alliencees my alliencees is best give me alliencees if only I had alliencees of my own',
-          'Scholars are divided as the impact of alliencees. Serveral studies find that defensive alliencees deter',
-          'I am sad without my alliencees. Join the alliencees you rebel scum',
+          '1.Join my alliencees my alliencees is best give me alliencees if only I had alliencees of my own',
+          '2. Scholars are divided as the impact of alliencees. Serveral studies find that defensive alliencees deter',
+          '3. I am sad without my alliencees. Join the alliencees you rebel scum',
         ],
         [
-          'I really love scrambled eggs. They are the Shiiit',
-          'Shiiit shitty bruv, you got wrecked so bad',
-          'You piece of Shiiit',
+          '1. I really love scrambled eggs. They are the Shiiit',
+          '2. Shiiit shitty bruv, you got wrecked so bad',
+          '3. You piece of Shiiit',
         ]
       ];
   }
