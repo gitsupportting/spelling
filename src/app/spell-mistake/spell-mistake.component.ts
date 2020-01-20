@@ -43,8 +43,6 @@ export class SpellMistakeComponent implements OnInit {
         { id: 4, text: "text4" },
         { id: 5, text: "text5" },
         { id: 6, text: "text6" },
-        { id: 7, text: "main7" },
-        { id: 8, text: "text8" }
       ],
       [
         { id: 1, text: "text1" },
@@ -53,8 +51,6 @@ export class SpellMistakeComponent implements OnInit {
         { id: 4, text: "text4" },
         { id: 5, text: "text5" },
         { id: 6, text: "text6" },
-        { id: 7, text: "main7" },
-        { id: 8, text: "text8" }
       ],
     ],
       this.example = [
